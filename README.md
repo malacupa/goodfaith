@@ -37,6 +37,13 @@ This tool solves these major barriers towards scalable automation via the follow
 ```
 pip3 install goodfaith
 ```
+
+### Run
+
+```
+cd src/ ; python3 -m goodfaith
+```
+
 ### Usage
 
 Example usage with input file:

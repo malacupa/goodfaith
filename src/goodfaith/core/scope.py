@@ -10,7 +10,7 @@ import ast
 import traceback
 import goodfaith.core.graph
 import goodfaith.core.scope
-from pandas.io.json import json_normalize
+from pandas import json_normalize
 from urllib.parse import urlparse
 
 def parseUrlRoot(urlvalue):
@@ -197,10 +197,10 @@ def boundaryGuard(dfAllURLs, outputDir, programScope, quietMode, debugMode, outp
 def processSingleDomain(domainName):
     domainList = []
     ext = tldextract.extract(domainName)
-    if (ext.suffix is not ''):
+    if (ext.suffix != ''):
         rootDomain = ext.domain + '.' + ext.suffix
         domainList.append(rootDomain)
-        if (ext.subdomain is not ''):
+        if (ext.subdomain != ''):
             subDomain = ext.subdomain
             subs = subDomain.split('.')
             subLength = len(subs) - 1
